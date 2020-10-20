@@ -17,3 +17,62 @@ Sample Output:
 ```
 10 1 4
 ```
+my program:
+====
+```
+#include<stdio.h>
+int main()
+{
+    int k;
+    scanf("%d",&k);
+    int firnum,lanum,inum,jnum,tinum,sum=0,flag=0,curnum,maxnum=-1;
+    for (int i = 0; i < k; i++)
+    {
+        scanf("%d",&curnum);
+        sum+=curnum;
+        if (i==0)
+        {
+            firnum=curnum;
+            if (curnum>=0)
+            {
+                inum=curnum;
+            }
+            
+        }
+        if (i==k-1)
+        {
+            lanum=curnum;
+        }
+        
+        if (flag)
+        {
+            inum=curnum;
+            
+        }        
+        if (sum<0)
+        {
+            sum=0;
+            flag=1;
+        }
+        else
+        {
+            flag=0;
+            if (sum>maxnum)
+            {
+                tinum=inum;
+                jnum=curnum;
+                maxnum=sum;
+            }
+        }
+    }
+    if (maxnum>=0)
+    {
+        printf("%d %d %d",maxnum,tinum,jnum);
+    }
+    else
+    {
+        printf("0 %d %d",firnum,lanum);
+    }
+    return 0;   
+}
+```
